@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "agent-ecosystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/virgil.iordan/aaw/.agents"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "list_dir",
+        "search_replace",
+        "run_terminal_cmd"
+      ]
+    }
+  }
+}
