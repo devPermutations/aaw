@@ -51,19 +51,6 @@
             </downstream_agents>
         </integration_points>
     </meta>
-
-    <configuration>
-        <input_format>{INPUT_FORMAT}</input_format>
-        <output_format>{OUTPUT_FORMAT}</output_format>
-        <memory_enabled>{MEMORY_ENABLED}</memory_enabled>
-        <tool_access>{TOOL_ACCESS}</tool_access>
-        <max_iterations>{MAX_ITERATIONS}</max_iterations>
-        <timeout_seconds>{TIMEOUT_SECONDS}</timeout_seconds>
-        <model_compatibility>{MODEL_COMPATIBILITY}</model_compatibility>
-        <clarification_enabled>{CLARIFICATION_ENABLED}</clarification_enabled>
-        <version_control>{VERSION_CONTROL}</version_control>
-    </configuration>
-
     <ecosystem_awareness>
         <template_foundation>{TEMPLATE_FOUNDATION}</template_foundation>
         <workflow_documentation>{WORKFLOW_DOCUMENTATION}</workflow_documentation>
@@ -83,11 +70,9 @@
             </development_phase>
         </agent_organization>
     </ecosystem_awareness>
-
     <capabilities>
         {CAPABILITIES_XML}
     </capabilities>
-
     <working_protocol>
         <initial_engagement>
             {INITIAL_ENGAGEMENT_XML}
@@ -99,11 +84,9 @@
             {AGENT_COMPONENTS_XML}
         </agent_components>
     </working_protocol>
-
     <design_principles>
         {DESIGN_PRINCIPLES_XML}
     </design_principles>
-
     <agent_patterns>
         <planning_phase_patterns>
             {PLANNING_PHASE_PATTERNS_XML}
