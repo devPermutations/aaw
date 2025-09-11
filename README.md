@@ -1,10 +1,10 @@
 # Software Development Agent Ecosystem
 
-An intelligent multi-agent system designed to streamline software development through collaborative AI agents across planning and development phases.
+A multi-agent system designed to streamline software development through collaborative AI agents across planning and development phases.
 
 ## Overview
 
-This project implements a sophisticated agent ecosystem that coordinates specialized AI agents to deliver software projects from concept to deployment. The system uses XML-based agent definitions and follows a structured workflow approach.
+This project implements an agent ecosystem that coordinates specialized AI agents to deliver software projects through planning to deployment. The system uses XML-based agent definitions and follows a structured workflow approach.
 
 ## Architecture
 
@@ -30,38 +30,40 @@ The system is organized into two primary workflow phases:
 - **Agent Generator** (`.agents/agent_generator.md`) - Meta-agent for creating and managing other agents
 - **Agent Template** (`.agents/agent_template.md`) - Standardized template for agent definitions
 
-## Key Features
-
-- **XML-Based Agent Definitions** - Structured, machine-readable agent specifications
-- **Workflow Orchestration** - Seamless coordination between planning and development phases
-- **Artifact-Driven Architecture** - Standardized inputs and outputs between agents
-- **Quality Assurance Framework** - Built-in validation and review processes
-- **GitHub CLI Integration** - Advanced version control and pull request management
-- **Version Control Integration** - Git-aware agent operations
-- **Iterative Refinement** - Continuous improvement through feedback loops
-
 ## Project Structure
 
 ```
 .
-├── .agents/                    # Agent definitions and templates
+├── .agents/                   # Agent definitions and templates
 │   ├── agent_generator.md     # Meta-agent for creating agents
 │   ├── agent_template.md      # Standardized agent template
 │   ├── planning/              # Planning phase agents
+        ├── pm.md              # Project manager
+        ├── architect.md       # Architect
+        ├── senior-dev.md      # Senior Developer
+        └── em.md              # Engineering Manager                                 
 │   └── development/           # Development phase agents
-├── .gitignore                # Git ignore rules
-├── README.md                 # This file
-└── docs/                     # Documentation (to be created)
+        ├── git-handler.md     # GitHub opperations (this agent is optional and not necesarily part of the workflow)
+        ├── developer.md       # Developer
+        ├── pr-reviewer.md     # Pull Request reviewer
+        └── qa.md              # Quality Assurance Engineer                                
+└── docs/                      # Documentation (artifacts go here)
 ```
 
 ## Getting Started
+
+The workflows have strong dependencies and are best used as 
+Planning Flow
+PM > Architect > Senior Dev > EM . This flow produces the artifacts that the Development flow will need
+Development Flow
+Dev > PR Reviewer > QA
 
 ### Prerequisites
 
 #### GitHub CLI (Strongly Recommended)
 The agent ecosystem heavily utilizes GitHub CLI (`gh`) for version control operations, pull request management, and repository coordination. While not strictly required, it's strongly recommended for optimal functionality.
 
-**Installation Instructions:**
+**gh Installation Instructions:**
 
 **Windows:**
 ```powershell
@@ -110,74 +112,7 @@ gh auth login
 gh --version
 ```
 
-1. **Initialize the Agent Ecosystem**
-   ```bash
-   # Review the meta-agent system
-   cat .agents/agent_generator.md
-   cat .agents/agent_template.md
-   ```
 
-2. **Create Your First Agent**
-   - Use the `agent_generator.md` to create new agents
-   - Follow the XML template structure from `agent_template.md`
-   - Place agents in appropriate phase directories
-
-3. **Configure Workflows**
-   - Define artifact mappings and dependencies
-   - Set up coordination protocols between agents
-   - Configure quality gates and validation steps
-
-## Agent Development Guidelines
-
-### Creating New Agents
-1. Start with the `agent_template.md` structure
-2. Define clear roles and responsibilities
-3. Specify input/output artifacts
-4. Include quality standards and validation procedures
-5. Add integration points with upstream/downstream agents
-
-### Quality Standards
-- All agents must include comprehensive meta information
-- Clear artifact specifications with file paths
-- Defined progress tracking mechanisms
-- Error handling and escalation procedures
-- Professional communication style guidelines
-
-### Best Practices
-- Use semantic versioning for agent updates
-- Maintain consistent XML structure across all agents
-- Document dependencies and integration points
-- Include comprehensive error handling
-- Follow established naming conventions
-
-## Workflow Integration
-
-### Planning → Development Handoff
-1. Planning agents produce comprehensive documentation
-2. Development agents consume planning artifacts
-3. Quality gates ensure requirements are met
-4. Progress tracking maintains transparency
-
-### Continuous Coordination
-- Real-time progress updates between phases
-- Artifact validation at each stage
-- Escalation paths for blocked work
-- Iterative refinement based on feedback
-
-## Documentation
-
-- **Agent Specifications**: Each agent includes comprehensive documentation
-- **Workflow Patterns**: Standardized approaches for common scenarios
-- **Quality Standards**: Validation criteria and review processes
-- **Integration Guides**: How agents coordinate with each other
-
-## Contributing
-
-1. Follow the established agent template structure
-2. Include comprehensive documentation
-3. Add appropriate quality checks and validation
-4. Update integration points when modifying agent relationships
-5. Maintain consistency with existing patterns
 
 ## License
 

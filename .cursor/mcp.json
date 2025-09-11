@@ -1,11 +1,11 @@
 {
   "mcpServers": {
-    "agent-ecosystem": {
+    "pm-agent": {
       "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/virgil.iordan/aaw/.agents"
+        "/Users/virgil.iordan/aaw/.agents/planning/pm"
       ],
       "env": {
         "NODE_ENV": "production"
@@ -16,7 +16,122 @@
         "list_dir",
         "search_replace",
         "run_terminal_cmd"
-      ]
+      ],
+      "description": "Product Manager agent responsible for defining project scope, objectives, requirements, and creating the projectBrief.md artifact. First agent in the planning workflow chain."
+    },
+    "architect-agent": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/virgil.iordan/aaw/.agents/planning/architect"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "list_dir",
+        "search_replace",
+        "run_terminal_cmd"
+      ],
+      "description": "Architect agent responsible for defining system architecture, technology stack, and implementation patterns. Creates architecture.md, techStack.md, and implementationPatterns.md artifacts."
+    },
+    "senior-dev-agent": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/virgil.iordan/aaw/.agents/planning/senior-dev"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "list_dir",
+        "search_replace",
+        "run_terminal_cmd"
+      ],
+      "description": "Senior Developer agent responsible for researching high-risk technical areas through spike documents. Conducts technical due diligence and provides implementation recommendations."
+    },
+    "em-agent": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/virgil.iordan/aaw/.agents/planning/em"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "list_dir",
+        "search_replace",
+        "run_terminal_cmd"
+      ],
+      "description": "Engineering Manager agent responsible for defining high-level epics and detailed epic specifications. Creates epicsHighLevelDescription.md and detailed epic documents, bridging planning and development phases."
+    },
+    "developer-agent": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/virgil.iordan/aaw/.agents/development/developer"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "list_dir",
+        "search_replace",
+        "run_terminal_cmd"
+      ],
+      "description": "Developer agent responsible for implementing code based on epic specifications. Executes development work and maintains epic conversation tracking for progress updates."
+    },
+    "pr-reviewer-agent": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/virgil.iordan/aaw/.agents/development/pr-reviewer"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "list_dir",
+        "search_replace",
+        "run_terminal_cmd"
+      ],
+      "description": "PR Reviewer agent responsible for code quality assurance, preventing function duplication through functionMap.md maintenance, and providing technical feedback on implementations."
+    },
+    "qa-agent": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/virgil.iordan/aaw/.agents/development/qa"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "list_dir",
+        "search_replace",
+        "run_terminal_cmd"
+      ],
+      "description": "QA agent responsible for defining and maintaining comprehensive test strategies, executing quality assurance processes, and ensuring test coverage meets requirements."
     }
   }
 }
