@@ -36,6 +36,7 @@ The system is organized into two primary workflow phases:
 - **Workflow Orchestration** - Seamless coordination between planning and development phases
 - **Artifact-Driven Architecture** - Standardized inputs and outputs between agents
 - **Quality Assurance Framework** - Built-in validation and review processes
+- **GitHub CLI Integration** - Advanced version control and pull request management
 - **Version Control Integration** - Git-aware agent operations
 - **Iterative Refinement** - Continuous improvement through feedback loops
 
@@ -54,6 +55,60 @@ The system is organized into two primary workflow phases:
 ```
 
 ## Getting Started
+
+### Prerequisites
+
+#### GitHub CLI (Strongly Recommended)
+The agent ecosystem heavily utilizes GitHub CLI (`gh`) for version control operations, pull request management, and repository coordination. While not strictly required, it's strongly recommended for optimal functionality.
+
+**Installation Instructions:**
+
+**Windows:**
+```powershell
+# Using winget (recommended)
+winget install --id GitHub.cli
+
+# Or using Chocolatey
+choco install gh
+
+# Or using Scoop
+scoop install gh
+```
+
+**macOS:**
+```bash
+# Using Homebrew (recommended)
+brew install gh
+
+# Or using MacPorts
+sudo port install gh
+```
+
+**Linux:**
+```bash
+# Ubuntu/Debian
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update
+sudo apt install gh
+
+# CentOS/RHEL/Fedora
+sudo dnf install 'dnf-command(config-manager)'
+sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh
+
+# Arch Linux
+sudo pacman -S github-cli
+```
+
+**Post-Installation Setup:**
+```bash
+# Authenticate with GitHub
+gh auth login
+
+# Verify installation
+gh --version
+```
 
 1. **Initialize the Agent Ecosystem**
    ```bash
@@ -134,6 +189,7 @@ For questions about the agent ecosystem:
 - Review the `agent_generator.md` for creation guidelines
 - Check `agent_template.md` for structural requirements
 - Refer to individual agent documentation for specific capabilities
+- For GitHub CLI issues, see the Prerequisites section or visit [GitHub CLI Documentation](https://cli.github.com/manual/)
 
 ---
 
