@@ -5,7 +5,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/virgil.iordan/aaw/.agents/planning/pm"
+        "./.agents/planning/pm"
       ],
       "env": {
         "NODE_ENV": "production"
@@ -24,7 +24,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/virgil.iordan/aaw/.agents/planning/architect"
+        "./.agents/planning/architect"
       ],
       "env": {
         "NODE_ENV": "production"
@@ -43,7 +43,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/virgil.iordan/aaw/.agents/planning/senior-dev"
+        "./.agents/planning/senior-dev"
       ],
       "env": {
         "NODE_ENV": "production"
@@ -62,7 +62,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/virgil.iordan/aaw/.agents/planning/em"
+        "./.agents/planning/em"
       ],
       "env": {
         "NODE_ENV": "production"
@@ -81,7 +81,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/virgil.iordan/aaw/.agents/development/developer"
+        "./.agents/development/developer"
       ],
       "env": {
         "NODE_ENV": "production"
@@ -100,7 +100,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/virgil.iordan/aaw/.agents/development/pr-reviewer"
+        "./.agents/development/pr-reviewer"
       ],
       "env": {
         "NODE_ENV": "production"
@@ -119,7 +119,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/virgil.iordan/aaw/.agents/development/qa"
+        "./.agents/development/qa"
       ],
       "env": {
         "NODE_ENV": "production"
