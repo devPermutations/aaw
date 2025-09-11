@@ -21,7 +21,7 @@ The diagram above illustrates the complete agent workflow and artifact creation 
 Each agent creates specific artifacts that serve as inputs for subsequent agents, ensuring proper information flow and dependency management throughout the development lifecycle.
 
 ## Getting Started
-For Cursor see .cursor/mcp.json.  Cursor will recognize this and register the agents as tools, no extra setup is required, simply accept at the bottom when Cursor prompts to register the MCP. Any other IDE extend the mcp.json tool definitions (maybe will update to generic solution in the)
+For Cursor see .cursor/mcp.json.  Cursor will recognize this and register the agents as tools, no extra setup is required, simply accept at the bottom when Cursor prompts to register the MCP. Any other IDE extend the mcp.json tool definitions (maybe will update to generic solution in the future)
 
 The workflows have strong dependencies and are best used as: 
 
@@ -73,18 +73,6 @@ The system is organized into two primary workflow phases:
         └── qa.md              # Quality Assurance Engineer                                
 └── docs/                      # Documentation (artifacts go here)
 ```
-
-## Getting Started
-
-The workflows have strong dependencies and are best used as: 
-
-Planning Flow.
-
-PM > Architect > Senior Dev > EM . This flow produces the artifacts that the Development flow will need
-
-Development Flow
-
-Dev > PR Reviewer > QA
 
 ### Prerequisites
 
