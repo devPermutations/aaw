@@ -6,7 +6,26 @@ A multi-agent system designed to streamline software development through collabo
 
 This project implements an agent ecosystem that coordinates specialized AI agents to deliver software projects through planning to deployment. The system uses XML-based agent definitions and follows a structured workflow approach.
 
+## Getting Started
+For Cursor see .cursor/mcp.json.  Cursor will recognize this and register the agents as tools, no extra setup is required, simply accept at the bottom when Cursor prompts to register the MCP. Any other IDE extend the mcp.json tool definitions (maybe will update to generic solution in the)
+
+The workflows have strong dependencies and are best used as: 
+
+Planning Flow.
+
+PM > Architect > Senior Dev > EM . This flow produces the artifacts that the Development flow will need
+
+Development Flow
+
+Dev > PR Reviewer > QA
+
 ## Architecture
+
+### Workflow Overview
+
+![Software Development Agent Workflow](docs/images/agent-workflow-diagram.png)
+
+*The diagram above illustrates the complete workflow from planning through development, showing how agents collaborate and the artifacts they produce.*
 
 ### Agent Organization
 
@@ -17,10 +36,9 @@ The system is organized into two primary workflow phases:
 - **Architect** - System architecture and technical design
 - **Spike** - Research and proof-of-concept development
 - **EM (Engineering Manager)** - Team coordination and oversight
-- **Release Manager** - Deployment and release coordination
 
 #### Development Phase Agents (`.agents/development/`)
-- **Git Handler** - Version control management
+- **Git Handler** - Version control management (this is optional)
 - **Developer** - Code implementation and development
 - **Code Reviewer** - Code quality assurance
 - **QA (Quality Assurance)** - Testing and validation
@@ -52,65 +70,20 @@ The system is organized into two primary workflow phases:
 
 ## Getting Started
 
-The workflows have strong dependencies and are best used as 
-Planning Flow
+The workflows have strong dependencies and are best used as: 
+
+Planning Flow.
+
 PM > Architect > Senior Dev > EM . This flow produces the artifacts that the Development flow will need
+
 Development Flow
+
 Dev > PR Reviewer > QA
 
 ### Prerequisites
 
 #### GitHub CLI (Strongly Recommended)
 The agent ecosystem heavily utilizes GitHub CLI (`gh`) for version control operations, pull request management, and repository coordination. While not strictly required, it's strongly recommended for optimal functionality.
-
-**gh Installation Instructions:**
-
-**Windows:**
-```powershell
-# Using winget (recommended)
-winget install --id GitHub.cli
-
-# Or using Chocolatey
-choco install gh
-
-# Or using Scoop
-scoop install gh
-```
-
-**macOS:**
-```bash
-# Using Homebrew (recommended)
-brew install gh
-
-# Or using MacPorts
-sudo port install gh
-```
-
-**Linux:**
-```bash
-# Ubuntu/Debian
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-sudo apt update
-sudo apt install gh
-
-# CentOS/RHEL/Fedora
-sudo dnf install 'dnf-command(config-manager)'
-sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh
-
-# Arch Linux
-sudo pacman -S github-cli
-```
-
-**Post-Installation Setup:**
-```bash
-# Authenticate with GitHub
-gh auth login
-
-# Verify installation
-gh --version
-```
 
 
 
