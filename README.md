@@ -6,6 +6,20 @@ A multi-agent system designed to streamline software development through collabo
 
 This project implements an agent ecosystem that coordinates specialized AI agents to deliver software projects through planning to deployment. The system uses XML-based agent definitions and follows a structured workflow approach.
 
+## Workflow & Artifact Diagram
+
+![Workflow and Artifact Diagram](.agents/workflow-and-artifact-diagram.png)
+
+The diagram above illustrates the complete agent workflow and artifact creation process:
+
+- **Planning Workflow** (Left): Linear flow from PM → Architect → Senior Dev → EM
+- **Planning Artifacts** (Center): Documents created during planning phase
+- **Development Artifacts** (Center): Documents and outputs from development phase  
+- **Development Workflow** (Right): Parallel execution flow for each epic
+- **Epic Conversations** (Top Right): Tracking completion status per epic
+
+Each agent creates specific artifacts that serve as inputs for subsequent agents, ensuring proper information flow and dependency management throughout the development lifecycle.
+
 ## Getting Started
 For Cursor see .cursor/mcp.json.  Cursor will recognize this and register the agents as tools, no extra setup is required, simply accept at the bottom when Cursor prompts to register the MCP. Any other IDE extend the mcp.json tool definitions (maybe will update to generic solution in the)
 
@@ -18,14 +32,6 @@ PM > Architect > Senior Dev > EM . This flow produces the artifacts that the Dev
 Development Flow
 
 Dev > PR Reviewer > QA
-
-## Architecture
-
-### Workflow Overview
-
-![Software Development Agent Workflow](docs/images/agent-workflow-diagram.png)
-
-*The diagram above illustrates the complete workflow from planning through development, showing how agents collaborate and the artifacts they produce.*
 
 ### Agent Organization
 
@@ -84,8 +90,6 @@ Dev > PR Reviewer > QA
 
 #### GitHub CLI (Strongly Recommended)
 The agent ecosystem heavily utilizes GitHub CLI (`gh`) for version control operations, pull request management, and repository coordination. While not strictly required, it's strongly recommended for optimal functionality.
-
-
 
 ## License
 
